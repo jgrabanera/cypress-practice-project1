@@ -68,12 +68,13 @@ describe("Alias and invoke", () => {
 
     cy.get("@saleItemPrice")
       .then(($linkText) => {
-        //callback fn
         let saleItemPrice = $linkText.split("$"); // split the extracted value and return as an array of itemPrice
+
         let salesItemsTotalPrice = 0;
 
-        saleItemPrice.forEach(($el, index) => {
-          salesItemsTotalPrice += Number(saleItemPrice[index]);
+        //changed from forLoop to forEach
+        saleItemPrice.forEach(($el) => {
+          salesItemsTotalPrice += Number($el);
         });
 
         // for (let i = 0; i < saleItemPrice.length; i++) {
