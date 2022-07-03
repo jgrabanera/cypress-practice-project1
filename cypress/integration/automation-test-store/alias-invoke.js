@@ -62,30 +62,35 @@ describe("Alias and invoke", () => {
         "Total non-sale price of " +
           itemPrice.length +
           " items is: $" +
-          itemsTotal
+          itemsTotalPrice
       )
     })
 
     // Get total number of Sale price
     cy.get(".thumbnail").find(".pricenew").invoke("text").as("saleItemPrice")
 
-    let saleItemsTotal = 0
-    cy.get("@saleItemPrice").then(($linkText) => {
-      //callback fn
-      let saleItemPrice = $linkText.split("$") // split the extracted value and return as an array of itemPrice
-      let salesItemsTotalPrice = 0
-      for (let i = 0; i < saleItemPrice.length; i++) {
-        // cy.log(saleItemPrice[i])
-        salesItemsTotalPrice += Number(saleItemPrice[i])
-      }
+    cy.get("@saleItemPrice")
+      .then(($linkText) => {
+        //callback fn
+        let saleItemPrice = $linkText.split("$") // split the extracted value and return as an array of itemPrice
+        let salesItemsTotalPrice = 0
+        for (let i = 0; i < saleItemPrice.length; i++) {
+          // cy.log(saleItemPrice[i])
+          salesItemsTotalPrice += Number(saleItemPrice[i])
+        }
 
-      saleItemsTotal += salesItemsTotalPrice
-      cy.log(
-        "Total sale price of " +
-          saleItemPrice.length +
-          " items is: $" +
-          saleItemsTotal
-      )
-    })
+        itemsTotal += salesItemsTotalPrice
+        cy.log(
+          "Total sale price of " +
+            saleItemPrice.length +
+            " items is: $" +
+            salesItemsTotalPrice
+        )
+      })
+
+      .then(() => {
+        cy.log("Total: " + itemsTotal)
+        expect(itemsTotal).to.equal(648.5)
+      })
   })
 })
