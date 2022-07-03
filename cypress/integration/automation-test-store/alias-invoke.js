@@ -28,5 +28,7 @@ describe("Alias and invoke", () => {
       .find(".productcart") //Find the class .productcart within the alias @productThumbnail
       .invoke("attr", "title") // Extract the attribute = title within the line
       .should("include", "Add to Cart") //include or contain may work
+
+    cy.log("Alias and invoke challenge is completed")
   })
 })
