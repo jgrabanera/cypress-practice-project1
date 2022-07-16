@@ -58,7 +58,7 @@ describe("Handle js alerts", () => {
       .click()
       .then(() => {
         //the value is stored in stub index 0
-        expect(stub.getCall(0)).to.be.calledWith("Press a button!");
+        expect(stub.getCall(0)).to.be.calledWith("Press a button!"); //assertion validate text in the button
       })
       .then(() => {
         return true;
