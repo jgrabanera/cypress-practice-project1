@@ -29,7 +29,7 @@ describe('Verify Autocomplete dropdown list via Webdriveruni', () => {
           const productToSelect = 'Grapes';
 
           if (prod === productToSelect) {
-            //$el.click();
+            //$el.click();// deprecated JQuery .click()
             $el.trigger('click');
 
             cy.get('#submit-button').click();
