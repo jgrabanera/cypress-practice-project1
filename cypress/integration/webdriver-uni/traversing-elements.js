@@ -23,23 +23,53 @@ describe('Traversing DOM elements in Cypress', () => {
   });
 
   // Get the element using filter (works like children())
-  it.only('filter() to retrieve DOM elements that match a specific selector', () => {
+  it('filter() to retrieve DOM elements that match a specific selector', () => {
     cy.get('.btn-group-toggle > *')
       .filter('.active')
       .should('contain', 'Button-1');
   });
+  // Get the number of links in pagination
+  it('find() to retrieve DOM elements of a given selector', () => {
+    cy.get('.traversal-pagination')
+      .find('li')
+      .find('a')
+      .should('have.length', 7);
+  });
 
-  it('find() to retrieve DOM elements of a given selector', () => {});
+  // Get the first result in table data
+  it('first() to retrieve the first DOM element within elements ', () => {
+    cy.get('.traversal-table > tbody > tr > td')
+      .first()
+      .should('contain', 'Andy');
+  });
 
-  it('first() to retrieve the first DOM element within elements ', () => {});
+  // Get the last result in table data
+  it('last() to retrieve the last DOM element within elements', () => {
+    cy.get('.traversal-table > tbody > tr > td')
+      .last()
+      .should('contain', 'Scott');
+  });
 
-  it('last() to retrieve the last DOM element within elements', () => {});
-
-  it('nextAll() to get all of the next sibling DOM elements within elements', () => {});
-
-  it('nextUntil() to get all of the next sibling DOM elements within elements until another element', () => {});
-
-  it('not() to remove DOM element(s) from the set of elements', () => {});
+  // Get the remaining number
+  it('nextAll() to get all of the next sibling DOM elements within elements', () => {
+    cy.get('.traversal-drinks-list')
+      .contains('Tea')
+      .nextAll()
+      .should('have.length', 3);
+  });
+  // Get the remaining number until index 3 (id#sugar)
+  it('nextUntil() to get all of the next sibling DOM elements within elements until another element', () => {
+    cy.get('.traversal-drinks-list')
+      .contains('Coffee')
+      .nextUntil('#sugar')
+      .should('have.length', 3); //index 3
+  });
+  // Select buttons without a class of disabled
+  it.only('not() to remove DOM element(s) from the set of elements', () => {
+    cy.get('.traversal-button-states > button')
+      .not('.disabled')
+      .should('not.have.class', 'disabled');
+  });
 
   it('parent() To get parent DOM element of elements', () => {});
 
