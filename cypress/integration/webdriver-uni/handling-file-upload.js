@@ -1,12 +1,14 @@
 /// <reference types="Cypress" />
 
 describe('Tes file upload via webdriveruni', () => {
-  it('Upload a file...', () => {
+  beforeEach(() => {
     cy.visit('http://www.webdriveruniversity.com');
     cy.get('#file-upload')
       .invoke('removeAttr', 'target')
       .click({ force: true });
+  });
 
+  it('Upload a file...', () => {
     cy.fixture('wallpaper.png', 'base64').then((fileContent) => {
       cy.get('#myFile').attachFile(
         {
@@ -23,11 +25,6 @@ describe('Tes file upload via webdriveruni', () => {
   });
 
   it('Upload no file...', () => {
-    cy.visit('http://www.webdriveruniversity.com');
-    cy.get('#file-upload')
-      .invoke('removeAttr', 'target')
-      .click({ force: true });
-
     cy.get('#submit-button').click({ force: true });
   });
 });

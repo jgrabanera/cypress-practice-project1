@@ -1,12 +1,14 @@
 /// <reference types="cypress" />
 
 describe('Verify Autocomplete dropdown list via Webdriveruni', () => {
-  it('Select specific vproduct via autocomplete list', () => {
+  before(() => {
     cy.visit('http://www.webdriveruniversity.com');
     cy.get('#autocomplete-textfield')
       .invoke('removeAttr', 'target')
       .click({ force: true });
+  });
 
+  it('Select specific vproduct via autocomplete list', () => {
     cy.get('#myInput').type('A');
     cy.get('#myInputautocomplete-list > *')
       .each(($el, index, $list) => {
