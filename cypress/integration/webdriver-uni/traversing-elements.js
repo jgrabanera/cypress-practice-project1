@@ -64,6 +64,7 @@ describe('Traversing DOM elements in Cypress', () => {
       .nextUntil('#sugar')
       .should('have.length', 3); //index 3
   });
+
   // Select buttons without a class of disabled
   it.only('not() to remove DOM element(s) from the set of elements', () => {
     cy.get('.traversal-button-states > button')
@@ -71,15 +72,37 @@ describe('Traversing DOM elements in Cypress', () => {
       .should('not.have.class', 'disabled');
   });
 
-  it('parent() To get parent DOM element of elements', () => {});
+  // Get the Parent Tag ex. H1 <span>. H1 is the parent tag that contains "Lorem ipsum"
+  it('parent() To get parent DOM element of elements', () => {
+    cy.get('.traversal-mark')
+      .parent()
+      .should('contain', 'Lorem ipsum dolor sit amet');
+  });
 
-  it('parents() to get parents DOM element of elements', () => {});
+  // Get the Parent(s) Tag is shows all the parents tag not just 1 tag ahead.
+  it('parents() to get parents DOM element of elements', () => {
+    cy.get('.traversal-cite').parents().should('match', 'blockquote');
+  });
 
-  it('prev() to get the previous sibling DOM element within elements', () => {});
+  //Get the prev elements that contains Espresso
+  it('prev() to get the previous sibling DOM element within elements', () => {
+    cy.get('#sugar').prev().contains('Espresso');
+  });
 
-  it('prevAll() to get all previous sibling DOM elements within elements', () => {});
+  //Get all siblings elements within parent element
+  it('prevAll() to get all previous sibling DOM elements within elements', () => {
+    cy.get('.sales').prevAll().should('have.length', 2);
+  });
 
-  it('prevUntil() to get all previous sibling DOM elements within elements until other element', () => {});
+  //Get all the prev elements until set id
+  it('prevUntil() to get all previous sibling DOM elements within elements until other element', () => {
+    cy.get('#veggie').prevUntil('#fruits').should('have.length', 5);
+  });
 
-  it('siblings() To get all sibling DOM elements of elements', () => {});
+  //Get all the siblings of active button
+  it('siblings() To get all sibling DOM elements of elements', () => {
+    cy.get('.traversal-button-other-states .active')
+      .siblings()
+      .should('have.length', 3);
+  });
 });
