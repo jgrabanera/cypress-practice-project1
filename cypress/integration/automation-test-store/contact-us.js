@@ -24,8 +24,6 @@ describe('Test Contact Us Form via Automation Test Store', () => {
       'name',
       'email'
     );
-
-    //cy.get("#ContactUsFrm_enquiry").type("Message details here");
     cy.xpath("//textarea[@id='ContactUsFrm_enquiry']").type(
       'Message details here'
     );
