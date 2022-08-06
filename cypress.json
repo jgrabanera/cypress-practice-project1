@@ -1,3 +1,11 @@
 {
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "defaultCommandTimeout": 10000,
+    "pageLoadTimeout": 30000,
+    "ignoreTestFiles": "**/other/*",
+  
+    "env": {
+        "first_name": "sarah"
     }
+  }
+  

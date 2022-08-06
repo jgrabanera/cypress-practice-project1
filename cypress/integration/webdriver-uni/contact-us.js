@@ -20,7 +20,7 @@ describe('Test Contact Us Form via WebdriverUni', () => {
   });
 
   it('Should be able to submit a successful submission via contact us form', () => {
-    cy.webdrivderUni_ContactForm_Submit(data.first_name, data.last_name, data.email, data.body, 'h1', 'Thank You for your Message!');
+    cy.webdrivderUni_ContactForm_Submit(Cypress.env('first_name'), data.last_name, data.email, data.body, 'h1', 'Thank You for your Message!');
   });
 
   it('Should not be able to submit a successful submission via contact us form as all fields are required', () => {
