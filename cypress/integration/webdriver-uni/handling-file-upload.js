@@ -2,10 +2,8 @@
 
 describe('Tes file upload via webdriveruni', () => {
   beforeEach(() => {
-    cy.visit('http://www.webdriveruniversity.com');
-    cy.get('#file-upload')
-      .invoke('removeAttr', 'target')
-      .click({ force: true });
+    cy.visit('/');
+    cy.get('#file-upload').invoke('removeAttr', 'target').click({ force: true });
   });
 
   it('Upload a file...', () => {

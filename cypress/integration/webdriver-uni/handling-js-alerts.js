@@ -2,10 +2,8 @@
 
 describe('Handle js alerts', () => {
   beforeEach(() => {
-    cy.visit('http://www.webdriveruniversity.com');
-    cy.get('#popup-alerts')
-      .invoke('removeAttr', 'target')
-      .click({ force: true });
+    cy.visit('/');
+    cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true });
   });
 
   //Validate JS Alert Text

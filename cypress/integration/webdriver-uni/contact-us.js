@@ -9,7 +9,7 @@ describe('Test Contact Us Form via WebdriverUni', () => {
   });
 
   beforeEach(() => {
-    cy.visit('http://www.webdriveruniversity.com');
+    cy.visit('/');
     cy.get('#contact-us').invoke('removeAttr', 'target').click({ force: true });
   });
 
