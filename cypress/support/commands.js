@@ -32,6 +32,10 @@ Cypress.Commands.add('selectProduct', (productName) => {
 // ---------------END OF THE LINE---------------------
 
 // ----------------WEBDRIVER UNI------------
+Cypress.Commands.add('navigateToContactPage', () => {
+  cy.visit('/' + '/Contact-Us/contactus.html');
+});
+
 Cypress.Commands.add('webdrivderUni_ContactForm_Submit', (first_name, last_name, email, textMsg, $selector, successMsg) => {
   cy.get('[name="first_name"]').type(first_name);
   cy.get('[name="last_name"]').type(last_name);
