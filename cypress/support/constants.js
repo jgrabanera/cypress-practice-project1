@@ -1,5 +1,4 @@
+//for Automation Test Store Site
 export const constants = {
-    
-    login_URL: "https://www.saucedemo.com/",
-    
-  }
+  automationTestStore_Url: 'https://automationteststore.com/',
+};
