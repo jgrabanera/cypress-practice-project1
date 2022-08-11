@@ -2,7 +2,6 @@
     "baseUrl":"http://www.webdriveruniversity.com",
     "chromeWebSecurity": false,
     "defaultCommandTimeout": 10000,
-    "pageLoadTimeout": 30000,
     "ignoreTestFiles": "**/other/*",
   
     "env": {

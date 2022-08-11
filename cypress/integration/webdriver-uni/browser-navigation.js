@@ -1,14 +1,18 @@
+import HomePage_PO from '../../support/pageObjects/webdriver_uni/Homepage_PO';
+
 /// <reference types="Cypress" />
 
 describe('Validate WebdriverUni homepage links', () => {
+  const homepage_PO = new HomePage_PO();
+
   it.only('Confirm links redirect to the correct pages', () => {
     //cy.visit("https://webdriveruniversity.com/Contact-Us/contactus.html")
+    // cy.visit('/');
+    // cy.get('#contact-us').invoke('removeAttr', 'target').click({ force: true });
+    homepage_PO.visitHomepage();
+    homepage_PO.clickOn_ContactUs_Button();
 
-    cy.visit('/');
-    cy.get('#contact-us').invoke('removeAttr', 'target').click({ force: true });
     cy.url().should('include', 'contactus');
-
-    //cy.navigateToContactPage();
 
     cy.go('back');
     cy.reload();
