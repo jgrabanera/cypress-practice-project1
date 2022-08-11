@@ -6,6 +6,7 @@
     "ignoreTestFiles": "**/other/*",
   
     "env": {
+        "webdriveruni_homepage": "http://www.webdriveruniversity.com",
         "first_name": "sarah"
     }
   }
