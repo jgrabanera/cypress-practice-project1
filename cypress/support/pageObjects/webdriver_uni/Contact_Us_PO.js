@@ -5,7 +5,7 @@ class Contact_Us_PO {
     cy.get('[name="email"]').type(email);
     cy.get('textarea.feedback-input').type(textMsg);
     cy.get('[type="submit"]').click();
-    cy.get($selector).contains(successMsg);
+    cy.get($selector).contains(successMsg, { timeout: 60000 }); // add timeout on assertion
   }
 }
 
