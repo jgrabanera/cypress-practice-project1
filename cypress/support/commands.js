@@ -35,6 +35,7 @@ Cypress.Commands.add('addProductToBasket', (productName) => {
     if ($el.text() === productName) {
       cy.log($el.text());
       cy.get('.productcart').eq(index).trigger('click');
+      //cy.pause();
     }
   });
 });
