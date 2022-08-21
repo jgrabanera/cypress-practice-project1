@@ -1,7 +1,7 @@
 class HomePage_PO {
   visitHomepage() {
     //cy.visit('/');  use as base URL
-    cy.visit(Cypress.env('webdriveruni_homepage')); //use the environment variable
+    cy.visit(Cypress.env('webdriveruni_homepage'), { timeout: 60000 }); //use the environment variable
   }
 
   clickOn_ContactUs_Button() {
