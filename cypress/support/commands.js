@@ -25,7 +25,7 @@
 Cypress.Commands.add('selectProduct', (productName) => {
   cy.get('.fixed_wrapper .prdocutname').each(($el, index, $list) => {
     if ($el.text().includes(productName)) {
-      cy.wrap($el).click();
+      cy.wrap($el).trigger('click');
     }
   });
 });
@@ -34,7 +34,7 @@ Cypress.Commands.add('addProductToBasket', (productName) => {
   cy.get('.fixed_wrapper .prdocutname').each(($el, index, $list) => {
     if ($el.text() === productName) {
       cy.log($el.text());
-      cy.get('.productcart').eq(index).click();
+      cy.get('.productcart').eq(index).trigger('click');
     }
   });
 });
