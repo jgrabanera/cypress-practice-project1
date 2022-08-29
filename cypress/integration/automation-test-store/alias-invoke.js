@@ -1,10 +1,17 @@
 /// <reference types="cypress" />
-import { constants } from '../../support/constants';
+import AutoStore_Homepage_PO from '../../support/pageObjects/automation-test-store/AutoStore_Homepage_PO';
+import AutoStore_HairCare_PO from '../../support/pageObjects/automation-test-store/AutoStore_HairCare_PO';
+//import { constants } from '../../support/constants';
 
 describe('Alias and invoke', () => {
+  const autostore_Homepage_PO = new AutoStore_Homepage_PO();
+  const autostore_Haircare_PO = new AutoStore_HairCare_PO();
+
   it('Validate a specific haircare product', () => {
-    cy.visit(constants.automationTestStore_Url);
-    cy.get("a[href*='product/category&path=']").contains('Hair Care').click();
+    // cy.visit(constants.automationTestStore_Url);
+    // cy.get("a[href*='product/category&path=']").contains('Hair Care').click();
+    autostore_Homepage_PO.accessHomepage();
+    autostore_Homepage_PO.clickOn_HairCare_Link();
 
     //Invoke = extract
     //.as() is use a variable
@@ -16,7 +23,8 @@ describe('Alias and invoke', () => {
 
   //validate if the number of .thumbnail class is exact 16
   it('Validate product thumbnail', () => {
-    cy.visit(constants.automationTestStore_Url);
+    autostore_Homepage_PO.accessHomepage();
+    // cy.visit(constants.automationTestStore_Url);
 
     //Invoke = extract
     //.as() is use a variable
@@ -31,7 +39,8 @@ describe('Alias and invoke', () => {
   });
 
   it.only('Calculate total of normal and sale products', () => {
-    cy.visit(constants.automationTestStore_Url);
+    //cy.visit(constants.automationTestStore_Url);
+    autostore_Homepage_PO.accessHomepage();
 
     //.as() is use a variable
     cy.get('.thumbnail').as('productThumbnail');
@@ -84,7 +93,7 @@ describe('Alias and invoke', () => {
 
       .then(() => {
         cy.log(`Total: ${itemsTotal}`);
-        expect(itemsTotal).to.equal(648.5);
+        expect(itemsTotal).to.equal(662);
       });
   });
 });

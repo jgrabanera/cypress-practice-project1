@@ -1,13 +1,12 @@
 {
-    "baseUrl":"http://www.webdriveruniversity.com",
-    "chromeWebSecurity": false,
-    "defaultCommandTimeout": 10000,
-    "pageLoadTimeout":30000,
-    "ignoreTestFiles": "**/other/*",
-  
-    "env": {
-        "webdriveruni_homepage": "http://www.webdriveruniversity.com",
-        "first_name": "sarah"
-    }
-  }
-  
+  "baseUrl": "http://www.webdriveruniversity.com",
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 10000,
+  "pageLoadTimeout": 30000,
+  "ignoreTestFiles": "**/other/*",
+  "env": {
+    "webdriveruni_homepage": "http://www.webdriveruniversity.com",
+    "first_name": "sarah"
+  },
+  "projectId": "4539tm"
+}

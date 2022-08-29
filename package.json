@@ -4,7 +4,11 @@
   "description": "Cypress Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTest-headless": "npx cypress run",
+    "triggerAllTest-headed": "npx cypress run --headed",
+    "triggerAllTest-chrome": "npx cypress run --browser chrome",
+    "triggerAllTest-dashboard": "npx cypress run --record --key d4ad0834-833a-40e4-8749-28460317dacb",
+    "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*"
   },
   "author": "Jomar Rabanera",
   "license": "ISC",
