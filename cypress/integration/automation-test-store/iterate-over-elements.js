@@ -3,7 +3,7 @@ import AutoStore_Homepage_PO from '../../support/pageObjects/automation-test-sto
 
 describe('Iterate over elements', () => {
   const autostore_Homepage_PO = new AutoStore_Homepage_PO();
-  const autostore_Haircare_PO = new AutoStore_HairCare_PO();
+  //const autostore_Haircare_PO = new AutoStore_HairCare_PO();
 
   beforeEach(() => {
     autostore_Homepage_PO.accessHomepage();
