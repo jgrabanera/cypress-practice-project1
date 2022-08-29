@@ -1,7 +1,9 @@
 /// <reference types="Cypress" />
-import { constants } from '../../support/constants';
+import AutoStore_Homepage_PO from '../../support/pageObjects/automation-test-store/AutoStore_Homepage_PO';
 
 describe('Test Contact Us Form via Automation Test Store', () => {
+  const autostore_Homepage_PO = new AutoStore_Homepage_PO();
+
   before(() => {
     cy.fixture('userDetails').as('user');
   });
@@ -9,7 +11,7 @@ describe('Test Contact Us Form via Automation Test Store', () => {
   it.only('Should be able to submit a successful submission via contact us form', () => {
     //Cypress code
     //cy.visit('https://automationteststore.com/');
-    cy.visit(constants.automationTestStore_Url);
+    autostore_Homepage_PO.accessHomepage();
 
     //cy.get(".info_links_footer > :nth-child(5) > a").click(); //normal Cypress selector
     cy.get("a[href$='contact']").click(); //CSS selector href that end's with
@@ -35,7 +37,7 @@ describe('Test Contact Us Form via Automation Test Store', () => {
   //Cypress Promise Challenge
   it('Should be able to show the text from the link', () => {
     //Cypress code
-    cy.visit(constants.automationTestStore_Url);
+    autostore_Homepage_PO.accessHomepage();
 
     cy.get("a[href$='contact']")
       .click()
