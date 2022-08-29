@@ -8,7 +8,7 @@ describe('Test Contact Us Form via Automation Test Store', () => {
     cy.fixture('userDetails').as('user');
   });
 
-  it.only('Should be able to submit a successful submission via contact us form', () => {
+  it('Should be able to submit a successful submission via contact us form', () => {
     //Cypress code
     //cy.visit('https://automationteststore.com/');
     autostore_Homepage_PO.accessHomepage();

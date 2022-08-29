@@ -38,7 +38,7 @@ describe('Alias and invoke', () => {
     cy.log('Alias and invoke challenge is completed');
   });
 
-  it.only('Calculate total of normal and sale products', () => {
+  it('Calculate total of normal and sale products', () => {
     //cy.visit(constants.automationTestStore_Url);
     autostore_Homepage_PO.accessHomepage();
 

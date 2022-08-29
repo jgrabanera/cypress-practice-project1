@@ -49,7 +49,7 @@ describe('Traversing DOM elements in Cypress', () => {
   });
 
   // Select buttons without a class of disabled
-  it.only('not() to remove DOM element(s) from the set of elements', () => {
+  it('not() to remove DOM element(s) from the set of elements', () => {
     cy.get('.traversal-button-states > button').not('.disabled').should('not.have.class', 'disabled');
   });
 

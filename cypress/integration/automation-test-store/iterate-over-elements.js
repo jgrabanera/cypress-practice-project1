@@ -18,7 +18,7 @@ describe('Iterate over elements', () => {
       cy.log('Index: ' + index + ' : ' + $el.text());
     });
   });
-  it.only('Add specific product to basket', () => {
+  it('Add specific product to basket', () => {
     //cy.visit(constants.automationTestStore_Url);
     //cy.get("a[href*='product/category&path=']").contains('Hair Care').click();
 
