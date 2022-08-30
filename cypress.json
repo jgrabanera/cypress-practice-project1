@@ -8,5 +8,9 @@
     "webdriveruni_homepage": "http://www.webdriveruniversity.com",
     "first_name": "sarah"
   },
-  "projectId": "4539tm"
+  "projectId": "4539tm",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
 }
