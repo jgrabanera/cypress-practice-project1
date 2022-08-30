@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-30T13:51:31.020Z",
+    "end": "2022-08-30T13:51:53.337Z",
+    "duration": 22317,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a38e4fb-dfe4-48fb-a3a5-690dc5bc0eda",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/alias-invoke.js",
+      "file": "cypress/integration/automation-test-store/alias-invoke.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "860caeb4-c90e-40ff-bda8-cc02c7e4b9f6",
+          "title": "Alias and invoke",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate a specific haircare product",
+              "fullTitle": "Alias and invoke Validate a specific haircare product",
+              "timedOut": null,
+              "duration": 8566,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.visit(constants.automationTestStore_Url);\n// cy.get(\"a[href*='product/category&path=']\").contains('Hair Care').click();\nautostore_Homepage_PO.accessHomepage();\nautostore_Homepage_PO.clickOn_HairCare_Link(); //Invoke = extract\n//.as() is use a variable\ncy.get('.fixed_wrapper .prdocutname').eq(0).invoke('text').as('productThumbnail');\ncy.get('@productThumbnail').its('length').should('be.gt', 5); //validate if its length is greater than 5\ncy.get('@productThumbnail').should('include', 'Seaweed Conditioner');",
+              "err": {},
+              "uuid": "ebf8a985-f65b-4a0e-b9bf-ced073832e3d",
+              "parentUUID": "860caeb4-c90e-40ff-bda8-cc02c7e4b9f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate product thumbnail",
+              "fullTitle": "Alias and invoke Validate product thumbnail",
+              "timedOut": null,
+              "duration": 4792,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "autostore_Homepage_PO.accessHomepage(); // cy.visit(constants.automationTestStore_Url);\n//Invoke = extract\n//.as() is use a variable\ncy.get('.thumbnail').as('productThumbnail');\ncy.get('@productThumbnail').should('have.length', 16);\ncy.get('@productThumbnail').find('.productcart') //Find the class .productcart within the alias @productThumbnail\n.invoke('attr', 'title') // Extract the attribute = title within the line\n.should('include', 'Add to Cart'); //include or contain may work\ncy.log('Alias and invoke challenge is completed');",
+              "err": {},
+              "uuid": "f7b1935b-fa81-4c52-a602-85dd8aad6a2d",
+              "parentUUID": "860caeb4-c90e-40ff-bda8-cc02c7e4b9f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Calculate total of normal and sale products",
+              "fullTitle": "Alias and invoke Calculate total of normal and sale products",
+              "timedOut": null,
+              "duration": 4889,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.visit(constants.automationTestStore_Url);\nautostore_Homepage_PO.accessHomepage(); //.as() is use a variable\ncy.get('.thumbnail').as('productThumbnail'); // cy.get(\"@productThumbnail\").find(\".oneprice\").each(($el, index, $list) => {\n//     cy.log($el.text())\n//   })\n// Get total number of non-sale price\ncy.get('.thumbnail') // get * element with class .thumbnail\n.find('.oneprice') // find .oneprice class within .thumbnail\n.invoke('text') //extract all the value produce\n.as('itemPrice'); // save in alias(variable) @itemPrice\nlet itemsTotal = 0;\ncy.get('@itemPrice').then($linkText => {\n  //callback fn\n  let itemPrice = $linkText.split('$'); // split the extracted value and return as an array of itemPrice\n  let itemsTotalPrice = 0;\n  for (let i = 0; i < itemPrice.length; i++) {\n    // cy.log(itemPrice[i])\n    itemsTotalPrice += Number(itemPrice[i]);\n  }\n  itemsTotal += itemsTotalPrice;\n  cy.log(`Total non-sale price of ${itemPrice.length} items is: $${itemsTotalPrice}`);\n}); // Get total number of Sale price\ncy.get('.thumbnail').find('.pricenew').invoke('text').as('saleItemPrice');\ncy.get('@saleItemPrice').then($linkText => {\n  let saleItemPrice = $linkText.split('$'); // split the extracted value and return as an array of itemPrice\n  let salesItemsTotalPrice = 0; //changed from forLoop to forEach\n  saleItemPrice.forEach($el => {\n    salesItemsTotalPrice += Number($el);\n  }); // for (let i = 0; i < saleItemPrice.length; i++) {\n  //   //cy.log(saleItemPrice[i]);\n  //   salesItemsTotalPrice += Number(saleItemPrice[i]);\n  // }\n  itemsTotal += salesItemsTotalPrice;\n  cy.log(`Total sale price of ${saleItemPrice.length} items is: $${salesItemsTotalPrice}`);\n}).then(() => {\n  cy.log(`Total: ${itemsTotal}`);\n  expect(itemsTotal).to.equal(662);\n});",
+              "err": {},
+              "uuid": "0560a17d-3e7d-4311-aef1-c7697b9124a6",
+              "parentUUID": "860caeb4-c90e-40ff-bda8-cc02c7e4b9f6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ebf8a985-f65b-4a0e-b9bf-ced073832e3d",
+            "f7b1935b-fa81-4c52-a602-85dd8aad6a2d",
+            "0560a17d-3e7d-4311-aef1-c7697b9124a6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18247,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

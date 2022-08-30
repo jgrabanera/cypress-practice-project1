@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-30T13:53:34.752Z",
+    "end": "2022-08-30T13:54:00.533Z",
+    "duration": 25781,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "05d205a0-37fe-458d-bcf0-4cd35264b058",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/variables-and-cy-commands.js",
+      "file": "cypress/integration/automation-test-store/variables-and-cy-commands.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9d85154e-ce4a-4ef2-89c3-fdf5720d15b5",
+          "title": "Verifying variables, cypress commands and jquery commands",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigating to specific product pages",
+              "fullTitle": "Verifying variables, cypress commands and jquery commands Navigating to specific product pages",
+              "timedOut": null,
+              "duration": 13492,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "autostore_Homepage_PO.accessHomepage(); //cy.visit(constants.automationTestStore_Url);\n//The following will fail\n// const makeupLink = cy.get(\"a[href*='product/category&path=']\").contains(\"Makeup\")\n// const skincareLink = cy.get(\"a[href*='product/category&path=']\").contains(\"Skincare\")\n// makeupLink.click();\n// skincareLink.click();\n//The following will pass\n// const makeupLink = cy.get(\"a[href*='product/category&path=']\").contains(\"Makeup\")\n// makeupLink.click();\n// const skincareLink = cy.get(\"a[href*='product/category&path=']\").contains(\"Skincare\")\n// skincareLink.click();\n//Recommended Approach\ncy.get(\"a[href*='product/category&path=']\").contains('Skincare').click();\ncy.get(\"a[href*='product/category&path=']\").contains('Makeup').click();",
+              "err": {},
+              "uuid": "5f3ce24f-9c4c-4e3a-a3b9-ce801b13abf4",
+              "parentUUID": "9d85154e-ce4a-4ef2-89c3-fdf5720d15b5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Navigating to specific product pages",
+              "fullTitle": "Verifying variables, cypress commands and jquery commands Navigating to specific product pages",
+              "timedOut": null,
+              "duration": 4159,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "autostore_Homepage_PO.accessHomepage(); // cy.visit(constants.automationTestStore_Url);\ncy.get(\"a[href*='product/category&path=']\").contains('Makeup').click(); //Following code will fail\n// const header = cy.get(\"h1 .maintext\")\n// cy/log(header.text())\n//JQuery Approach\ncy.get('h1 .maintext').then($headerText => {\n  const headerText = $headerText.text();\n  cy.log('Found header text: ' + headerText);\n  expect(headerText).is.eq('Makeup');\n});",
+              "err": {},
+              "uuid": "3614c195-d573-46ff-8637-0f471d23d8a5",
+              "parentUUID": "9d85154e-ce4a-4ef2-89c3-fdf5720d15b5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate properties of Contact Us Page",
+              "fullTitle": "Verifying variables, cypress commands and jquery commands Validate properties of Contact Us Page",
+              "timedOut": null,
+              "duration": 4124,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "autostore_Homepage_PO.clickOn_Contact_Us_Page(); //cy.visit('https://automationteststore.com/index.php?rt=content/contact/');\n//Cypress approach\ncy.contains('#ContactUsFrm', 'Contact Us Form').find('#field_11').should('contain', 'First name'); //JQuery Approach\ncy.contains('#ContactUsFrm', 'Contact Us Form').then(text => {\n  const firstNameText = text.find('#field_11').text();\n  expect(firstNameText).is.contain('First name'); //Embedded Commands (Closure)\n  cy.get('#field_11').then(fnText => {\n    cy.log(fnText.text());\n    cy.log(fnText);\n  });\n});",
+              "err": {},
+              "uuid": "e7ab81d1-211b-4252-be49-3512a37fe2b9",
+              "parentUUID": "9d85154e-ce4a-4ef2-89c3-fdf5720d15b5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5f3ce24f-9c4c-4e3a-a3b9-ce801b13abf4",
+            "3614c195-d573-46ff-8637-0f471d23d8a5",
+            "e7ab81d1-211b-4252-be49-3512a37fe2b9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21775,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
