@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="24.0970" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-08-30T13:07:12" tests="0" file="cypress/integration/automation-test-store/variables-and-cy-commands.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Verifying variables, cypress commands and jquery commands" timestamp="2022-08-30T13:07:12" tests="3" time="24.0770" failures="0">
+    <testcase name="Verifying variables, cypress commands and jquery commands Navigating to specific product pages" time="15.2430" classname="Navigating to specific product pages">
+    </testcase>
+    <testcase name="Verifying variables, cypress commands and jquery commands Navigating to specific product pages" time="3.1320" classname="Navigating to specific product pages">
+    </testcase>
+    <testcase name="Verifying variables, cypress commands and jquery commands Validate properties of Contact Us Page" time="1.4820" classname="Validate properties of Contact Us Page">
+    </testcase>
+  </testsuite>
+</testsuites>

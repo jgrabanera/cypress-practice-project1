@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.1720" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-08-30T12:51:37" tests="0" file="cypress/integration/webdriver-uni/hooks.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Hooks" timestamp="2022-08-30T12:51:37" tests="2" time="0.1520" failures="0">
+    <testcase name="Hooks Example test1" time="0.0850" classname="Example test1">
+    </testcase>
+    <testcase name="Hooks Example test2" time="0.0270" classname="Example test2">
+    </testcase>
+  </testsuite>
+</testsuites>

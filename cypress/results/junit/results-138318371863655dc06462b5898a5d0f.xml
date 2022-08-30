@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.6150" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-08-30T12:50:24" tests="0" file="cypress/integration/webdriver-uni/handling-checkboxes.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Verify checkboxes via webdriveruni" timestamp="2022-08-30T12:50:24" tests="3" time="5.5870" failures="0">
+    <testcase name="Verify checkboxes via webdriveruni Check and validate checkbox" time="3.3310" classname="Check and validate checkbox">
+    </testcase>
+    <testcase name="Verify checkboxes via webdriveruni Uncheck and validate checkbox" time="1.0590" classname="Uncheck and validate checkbox">
+    </testcase>
+    <testcase name="Verify checkboxes via webdriveruni Check multiple checkboxes" time="1.1640" classname="Check multiple checkboxes">
+    </testcase>
+  </testsuite>
+</testsuites>
