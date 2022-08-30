@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="19.8180" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-08-30T12:01:12" tests="0" file="cypress/integration/automation-test-store/contact-us.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test Contact Us Form via Automation Test Store" timestamp="2022-08-30T12:01:12" tests="2" time="19.7730" failures="0">
+    <testcase name="Test Contact Us Form via Automation Test Store Should be able to submit a successful submission via contact us form" time="12.9140" classname="Should be able to submit a successful submission via contact us form">
+    </testcase>
+    <testcase name="Test Contact Us Form via Automation Test Store Should be able to show the text from the link" time="2.6640" classname="Should be able to show the text from the link">
+    </testcase>
+  </testsuite>
+</testsuites>
