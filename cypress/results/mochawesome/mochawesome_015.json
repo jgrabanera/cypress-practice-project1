@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-31T13:44:59.341Z",
+    "end": "2022-08-31T13:45:05.794Z",
+    "duration": 6453,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b88123d5-78c2-4eab-82a6-cc65be31c409",
+      "title": "",
+      "fullFile": "cypress/integration/webdriver-uni/handling-mouse-actions.js",
+      "file": "cypress/integration/webdriver-uni/handling-mouse-actions.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "095acda8-c768-446e-a44a-23d7ac7fcedd",
+          "title": "Test mouse actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "I should be able to drag and drop a draggable item",
+              "fullTitle": "Test mouse actions I should be able to drag and drop a draggable item",
+              "timedOut": null,
+              "duration": 3630,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#draggable').trigger('mousedown', {\n  which: 1\n});\ncy.get('#droppable').trigger('mousemove').trigger('mouseup', {\n  force: true\n});",
+              "err": {},
+              "uuid": "69aa1128-63da-4da8-9280-c2b24aaa7d19",
+              "parentUUID": "095acda8-c768-446e-a44a-23d7ac7fcedd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able to perform a double mouse click",
+              "fullTitle": "Test mouse actions I should be able to perform a double mouse click",
+              "timedOut": null,
+              "duration": 1717,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#double-click').dblclick();",
+              "err": {},
+              "uuid": "c80ad229-c2a2-4506-9c4e-d1ddffa12d93",
+              "parentUUID": "095acda8-c768-446e-a44a-23d7ac7fcedd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "I should be able hold down the left mouse click button on a given element",
+              "fullTitle": "Test mouse actions I should be able hold down the left mouse click button on a given element",
+              "timedOut": null,
+              "duration": 1023,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#click-box').trigger('mousedown', {\n  which: 1\n}).then($element => {\n  expect($element).to.have.css('background-color', 'rgb(0, 255, 0)');\n});",
+              "err": {},
+              "uuid": "89c027d0-0118-4034-99c1-1c41eab4522e",
+              "parentUUID": "095acda8-c768-446e-a44a-23d7ac7fcedd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "69aa1128-63da-4da8-9280-c2b24aaa7d19",
+            "c80ad229-c2a2-4506-9c4e-d1ddffa12d93",
+            "89c027d0-0118-4034-99c1-1c41eab4522e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6370,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -14,7 +14,8 @@
     "delete-junit-results": "rm -rf cypress/results/junit/* || true",
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
-    "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true"
+    "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true",
+    "cypress-regression-pack": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-merge"
   },
   "author": "Jomar Rabanera",
   "license": "ISC",

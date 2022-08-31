@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-31T13:42:26.488Z",
+    "end": "2022-08-31T13:42:38.384Z",
+    "duration": 11896,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3c231b85-ac8d-47f3-972e-33abedad040d",
+      "title": "",
+      "fullFile": "cypress/integration/automation-test-store/iterate-over-elements.js",
+      "file": "cypress/integration/automation-test-store/iterate-over-elements.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f45a3ce5-a8bd-4a49-8eac-371593935707",
+          "title": "Iterate over elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Log information of all hair care products",
+              "fullTitle": "Iterate over elements Log information of all hair care products",
+              "timedOut": null,
+              "duration": 6692,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.visit(constants.automationTestStore_Url);\n//cy.get(\"a[href*='product/category&path=']\").contains('Hair Care').click();\ncy.get('.fixed_wrapper .prdocutname').each(($el, index, $list) => {\n  cy.log('Index: ' + index + ' : ' + $el.text());\n});",
+              "err": {},
+              "uuid": "6592fa2b-c26c-4d51-b0f7-812fcb5c306f",
+              "parentUUID": "f45a3ce5-a8bd-4a49-8eac-371593935707",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add specific product to basket",
+              "fullTitle": "Iterate over elements Add specific product to basket",
+              "timedOut": null,
+              "duration": 1540,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.visit(constants.automationTestStore_Url);\n//cy.get(\"a[href*='product/category&path=']\").contains('Hair Care').click();\ncy.selectProduct('Eau Parfumee au The Vert Shampoo');",
+              "err": {},
+              "uuid": "f3995941-991b-4213-bb9f-0010a64bfab0",
+              "parentUUID": "f45a3ce5-a8bd-4a49-8eac-371593935707",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6592fa2b-c26c-4d51-b0f7-812fcb5c306f",
+            "f3995941-991b-4213-bb9f-0010a64bfab0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8232,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
