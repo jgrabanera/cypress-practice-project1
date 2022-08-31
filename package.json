@@ -13,6 +13,7 @@
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-junit-results": "rm -rf cypress/results/junit/* || true",
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true"
   },
   "author": "Jomar Rabanera",
