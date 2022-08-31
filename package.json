@@ -11,7 +11,9 @@
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
-    "delete-results": "rm -rf cypress/results/junit/* || true"
+    "delete-junit-results": "rm -rf cypress/results/junit/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true"
   },
   "author": "Jomar Rabanera",
   "license": "ISC",
