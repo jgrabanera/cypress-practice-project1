@@ -15,7 +15,8 @@
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true",
-    "cypress-regression-pack": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-merge"
+    "cypress-regression-pack": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-merge",
+    "triggerAllTests-staging": "npx cypress run --config-file cypress/config/stagin.json"
   },
   "author": "Jomar Rabanera",
   "license": "ISC",
