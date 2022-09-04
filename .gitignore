@@ -1,7 +1,7 @@
-node_modules/
-../results
-../screenshots
-../videos
-mochawesome-report/
+node_modules
+results
+screenshots
+videos
+mochawesome-report
 package-lock.json
 mochawesome.json
