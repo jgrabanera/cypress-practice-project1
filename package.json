@@ -9,6 +9,8 @@
     "triggerAllTest-chrome": "npx cypress run --browser chrome",
     "triggerAllTest-dashboard": "npx cypress run --record --key d4ad0834-833a-40e4-8749-28460317dacb",
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
+    "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
+    "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key d4ad0834-833a-40e4-8749-28460317dacb",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-junit-results": "rm -rf cypress/results/junit/* || true",
@@ -16,7 +18,7 @@
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true",
     "cypress-regression-pack": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-merge",
-    "triggerAllTests-staging": "npx cypress run --config-file cypress/config/stagin.json"
+    "triggerAllTests-staging": "npx cypress run --config-file cypress/config/staging.json"
   },
   "author": "Jomar Rabanera",
   "license": "ISC",
