@@ -9,7 +9,7 @@
     "triggerAllTest-chrome": "npx cypress run --browser chrome",
     "triggerAllTest-dashboard": "npx cypress run --record --key d4ad0834-833a-40e4-8749-28460317dacb",
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
-    "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
+    "triggerAllTest-autostore": "NO_COLOR=1 npx cypress run --spec cypress/integration/automation-test-store/*",
     "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key d4ad0834-833a-40e4-8749-28460317dacb",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
