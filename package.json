@@ -18,6 +18,8 @@
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "delete-mochawesome-results": "rm -rf cypress/results/mochawesome/* || true",
     "cypress-regression-pack": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-headless && npm run mochawesome-merge",
+    "cypress-regression-autostore": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-autostore && npm run mochawesome-merge",
+    "cypress-regression-webdriveruni": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-webdriveruni && npm run mochawesome-merge",
     "triggerAllTests-staging": "npx cypress run --config-file cypress/config/staging.json"
   },
   "author": "Jomar Rabanera",
