@@ -11,7 +11,7 @@
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerAllTest-webdriveruni-report": "npm run triggerAllTest-webdriveruni && npm run mochawesome-merge",
     "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
-    "triggerAllTest-autostore-report": "npm run triggerAllTest-autostore && npm run mochawesome-merge",
+    "triggerAllTest-autostore-report": "npm run triggerAllTest-dashboard && npm run mochawesome-merge",
     "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key d4ad0834-833a-40e4-8749-28460317dacb",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
