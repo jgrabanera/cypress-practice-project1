@@ -14,7 +14,7 @@
     "cypress-regression-webdriveruni": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-webdriveruni && npm run mochawesome-merge",
     "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
     "triggerAllTest-autostore-report": "npm run triggerAllTest-autostore-dashboard && npm run mochawesome-merge",
-    "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key d4ad0834-833a-40e4-8749-28460317dacb --parallel --browser chrome --headed",
+    "triggerAllTest-autostore-dashboard": "npx cypress run --spec cypress/integration/automation-test-store/* --record --key d4ad0834-833a-40e4-8749-28460317dacb --parallel",
     "cypress-regression-autostore": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-autostore && npm run mochawesome-merge",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",

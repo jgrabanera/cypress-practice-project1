@@ -14,7 +14,7 @@ pipeline{
                         git url:'https://github.com/jgrabanera/cypress-practice-project1.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTest-autostore-dashboard"'
+                        bat 'npm run %Script%'
                     }
                 }
                 stage('Slave Node2'){
@@ -25,7 +25,7 @@ pipeline{
                         git url:'https://github.com/jgrabanera/cypress-practice-project1.git'
                         bat 'npm install'
                         bat 'npm update'
-                        bat 'npm run triggerAllTest-autostore-dashboard"'
+                        bat 'npm run %Script%'
                     }
                 }
             }
