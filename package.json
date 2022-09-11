@@ -10,7 +10,7 @@
     "triggerAllTest-dashboard": "npx cypress run --record --key d4ad0834-833a-40e4-8749-28460317dacb",
     "triggerAllTest-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerAllTest-webdriveruni-report": "npm run triggerAllTest-webdriveruni && npm run mochawesome-merge",
-    "triggerAllTest-webdriveruni-dashboard": "npx cypress run --spec cypress/integration/webdriver-uni/* --record --key d4ad0834-833a-40e4-8749-28460317dacb",
+    "triggerAllTest-webdriveruni-dashboard": "npx cypress run --spec cypress/integration/webdriver-uni/* --record --key d4ad0834-833a-40e4-8749-28460317dacb --parallel",
     "cypress-regression-webdriveruni": "npm run delete-mochawesome-report && npm run delete-mochawesome-results && npm run triggerAllTest-webdriveruni && npm run mochawesome-merge",
     "triggerAllTest-autostore": "npx cypress run --spec cypress/integration/automation-test-store/*",
     "triggerAllTest-autostore-report": "npm run triggerAllTest-autostore-dashboard && npm run mochawesome-merge",
