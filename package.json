@@ -28,7 +28,7 @@
   "author": "Jomar Rabanera",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^8.7.0",
+    "cypress": "^9.7.0",
     "cypress-file-upload": "^5.0.8",
     "cypress-multi-reporters": "^1.6.1",
     "cypress-xpath": "^1.6.2",

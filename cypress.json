@@ -2,7 +2,7 @@
   "baseUrl": "http://www.webdriveruniversity.com/",
   "chromeWebSecurity": false,
   "defaultCommandTimeout": 10000,
-  "pageLoadTimeout": 30000,
+  "pageLoadTimeout": 60000,
   "viewportHeight": 1080,
   "viewportWidth": 1920,
   "ignoreTestFiles": "same*.js",
