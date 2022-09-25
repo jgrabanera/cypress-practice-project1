@@ -93,7 +93,7 @@ describe('Alias and invoke', () => {
 
       .then(() => {
         cy.log(`Total: ${itemsTotal}`);
-        expect(itemsTotal).to.equal(662);
+        expect(itemsTotal).to.equal(685.6);
       });
   });
 });
