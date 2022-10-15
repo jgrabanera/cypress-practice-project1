@@ -8,7 +8,7 @@ pipeline{
             parallel{
                 stage('Slave Node1'){
                     agent{
-                        label "remote_node1"
+                        label "node1"
                     }
                     steps {
                         git url:'https://github.com/jgrabanera/cypress-practice-project1.git'
@@ -19,7 +19,7 @@ pipeline{
                 }
                 stage('Slave Node2'){
                     agent{
-                        label "remote_node2"
+                        label "node2"
                     }
                     steps {
                         git url:'https://github.com/jgrabanera/cypress-practice-project1.git'
